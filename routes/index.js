@@ -5,23 +5,32 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('jade/index', { title: 'Home', message: 'Collaborata' });
+  res.render('jade/index', { title: 'Home' });
 });
 
 /* GET about page. */
 router.get('/about', function(req, res, next) {
-  res.send("Welcome to Collaborata Website!");
+  res.render('jade/about', { title: 'About' });
 });
 
 /* GET sign-up page. */
 router.get('/sign-up', function(req, res, next) {
-  // res.render('signup', { title: 'Sign Up' });
-  res.send("Please fill out the below form <a href='/login'>login</a>!");
+  res.render('jade/signup', { title: 'Sign-Up' });
 });
 
-// route with parameters
-router.get('/contact/:name', function(req, res) {
-    res.send('Hi ' + req.params.name + ", Thanks for visting the site! Be sure to <a href='/login'>login</a>!");
+/* GET sign-up/consumer page. */
+router.get('/sign-up/consumer', function(req, res, next) {
+  res.render('jade/signup-consumer', { title: 'Sign Up As Consumer' });
+});
+
+/* GET sign-up/vendor page. */
+router.get('/sign-up/vendor', function(req, res, next) {
+  res.render('jade/signup-vendor', { title: 'Sign Up As Vendor' });
+});
+
+/* GET contact page. */
+router.get('/contact', function(req, res) {
+    res.render('jade/contact', { title: 'Contact' });
 });
 
 module.exports = router;

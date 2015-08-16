@@ -1,0 +1,17 @@
+doctype html
+html
+	head
+		include ../header
+	body
+		header
+			h1 Collaborata
+		.container
+			.main-content
+				block content
+				.container 
+					h2 #{title}
+					p.lead #{message}
+			.sidebar
+				include ../menu
+		footer
+			include ../footer

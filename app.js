@@ -1,16 +1,21 @@
 // BASE SETUP
 // ==============================================
 var express = require('express');
+var http = require('http'); 
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+// var mongoose = require('mongoose');
+// var dbURI = 'mongodb://localhost:27017'; 
 
 // ROUTES
 // ==============================================
 var routes = require('./routes/index');
 var users = require('./routes/users');
+// var orders = require('./routes/orders');
+// var config = require('./config');
 
 // START THE SERVER
 // ==============================================
@@ -20,8 +25,31 @@ app.listen(port, function() {
     console.log(new Date().toISOString() + ": server started on port " + port);
 });
 
+// http.createServer(function (req, res) {  
+//   pages.index(req, res);
+// }).listen(8081, '27017');
+
+// // Create the database connection 
+// mongoose.connect(dbURI);
+
+// // CONNECTION EVENTS
+// // When successfully connected
+// mongoose.connection.on('connected', function () {  
+//   console.log('Mongoose default connection open to ' + dbURI);
+// }); 
+
+// // If the connection throws an error
+// mongoose.connection.on('error',function (err) {  
+//   console.log('Mongoose default connection error: ' + err);
+// }); 
+
+// // When the connection is disconnected
+// mongoose.connection.on('disconnected', function () {  
+//   console.log('Mongoose default connection disconnected'); 
+// });
+
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/public/views'));
 // app.set('view engine', 'hjs');
 app.set('view engine', 'jade');
 
@@ -37,6 +65,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // apply the routes to application
 app.use('/', routes);
 app.use('/users', users);
+// app.get('/', routes.index);
+// app.get('/:name', routes.view);
+// app.get('/partials/:name', routes.partials);
+
+// redirect all others to the index (HTML5 history)
+app.get('*', routes);
 
 app.route('/login')
 

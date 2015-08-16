@@ -1,0 +1,33 @@
+extends partials/layout
+
+block content
+	.main-content
+		h1.glyphicon.glyphicon-road #{title}
+		br
+		br
+		h2.text-center.jumbotron  ABOUT US
+			p Collaborata’s basic premise is that no matter the size of your business, facilitating companies and organizations; collaborating in shaping and funding marketing research.
+			input.form-control(type= "search", placeholder="Search", ng-model="name")
+			button.bt.btn-info.btn-sm(data-toggle="modal" data-target="#myModal")
+				span.glyphicon.glyphicon-search Search
+		.col-lg-6.col-md-6.col-sm-6.col-xs-12
+
+			.panel.panel-default("Panel Heading", "success")
+				.panel-heading PROJECT MORE FOO THAN BAR
+				.panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+			.panel.panel-default
+				.panel-heading PROJECT NO FOO AT ALL
+				.panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+		.col-lg-6.col-md-6.col-sm-6.col-xs-12
+
+			.panel.panel-default
+				.panel-heading PROJECT FOO BAR
+				.panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+			.panel.panel-default
+				.panel-heading PROJECT NOT BAR
+				.panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+		div(ng-view)

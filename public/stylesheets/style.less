@@ -1,5 +1,6 @@
-@base: #f938ab;
-@padding: 100px;
+@base: #ccc;
+@padding: 10px;
+@margin: 50px;
 
 .box-shadow(@style, @c) when (iscolor(@c)) {
   -webkit-box-shadow: @style @c;
@@ -10,12 +11,6 @@
   .box-shadow(@style, rgba(0, 0, 0, @alpha));
 }
 
-#wrap{
-  color: saturate(@base, 5%);
-  border-color: lighten(@base, 30%);
-  div { .box-shadow(0 0 5px, 30%) }
-}
-
 .border-radius (@radius: 5px) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
@@ -23,24 +18,36 @@
 }
 
 /* Implementation */
-#wrap {
-	.border-radius(20px);
-} 
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
-a {
-  color: #00B7FF;
-}
-
-h1 {
-  color: blue;
-}
-
-p {
-  color: brown;
+.sidebar{
   padding-left: @padding;
+  border-right: 1px solid @base;
+}
+
+.sidebar p{
+  padding-left: @padding;
+}
+
+.sidebar h1{
+  padding-bottom: @padding;
+  border-bottom: 1px solid @base;
+}
+
+
+footer{
+  border-top: 1px solid @base;
+  margin-top: @margin;
+  font-style: italic;
+  text-align: center;
+}
+
+.reset {
+  margin-left: 5px;
+}
+
+.drop {
+  width: 100%;
+  top:auto;
+  padding-left: 0px;
 }
