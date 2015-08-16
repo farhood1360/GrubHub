@@ -35,4 +35,8 @@ This README would normally document whatever steps are necessary to get your app
 ### Who do I talk to? ###
 
 * Repo owner or admin: Farhood Rashidi
+<<<<<<< HEAD
 * Other community or team contact: Bill Korbecki, Jimmy Zollo
+=======
+* Other community or team contact: Bill, Jimmy Zollo
+>>>>>>> c401731f9e68fdb5bc8341557cc25221210827ad

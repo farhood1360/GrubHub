@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 Farhood Rashidi
 Jimmy Zollo
 Bill Korbecki
-=======
-farhood rashidi
-Bill Korbecki
-Jimmy Zollo
->>>>>>> c401731f9e68fdb5bc8341557cc25221210827ad
+
