@@ -6,49 +6,50 @@ block content
 		br
 		br
 		h2.text-center.text-uppercase.jumbotron  Create New Account
-		.form-group
-			| First Name:
-			input.form-control( type="text", placeholder="First Name", ng-model="fname" ) 
-		.form-group
-			| Last Name:
-			input.form-control( type="text", placeholder="Last Name", ng-model="lname" ) 
-		.form-group
-			| Phone:
-			input.form-control( type="text", placeholder="Phone", ng-model="phone" ) 
-		.form-group
-			| Email:
-			input.form-control( type="text", placeholder="Email", ng-model="email" ) 
-		.form-group
-			| Address 1:
-			input.form-control( type="text", placeholder="Address 1", ng-model="address1" )
-		.form-group
-			| Address 2:
-			input.form-control( type="text", placeholder="Address 2", ng-model="address2" ) 
-		.form-group
-			| City:
-			input.form-control( type="text", placeholder="city", ng-model="city" ) 
-		.form-group.col-lg-12.col-md-12.col-sm-12.col-xs-12
-			| State:
-			button.btn.btn-default.btn-sm.drop.dropdown-toggle( type="button", data-toggle="dropdown") IL
-			span.caret
-			ul.dropdown-menu.drop.btn-block( role="menu" )
-				li:  a( href="#" ) IL
-				li:  a( href="#" ) MI
-				li:  a( href="#" ) IN
-				li:  a( href="#" ) CA
-				li:  a( href="#" ) NY
-				li:  a( href="#" ) OH
-		.form-group
-			| Postal Code:
-			input.form-control( type="text", placeholder="Postal Code", ng-model="postal" ) 
-		.form-group
-			| User Name:
-			input.form-control( type="text", placeholder="User Name", ng-model="uname" ) 
-		.form-group
-			| Password:
-			input.form-control( type="password", placeholder="Password", ng-model="password" ) 
-		.text-center
-			button.btn.btn-info.btn-md.pull-center( type="submit") Submit
-			button.btn.btn-info.btn-md.pull-center.reset( type="reset") Reset
+		div(ng-app='')
+			.form-group
+				| First Name:
+				input.form-control( type="text", placeholder="First Name", ng-model="fname" )
+			.form-group
+				| Last Name:
+				input.form-control( type="text", placeholder="Last Name", ng-model="lname" ) 
+			.form-group
+				| Phone:
+				input.form-control( type="text", placeholder="Phone", ng-model="phone" ) 
+			.form-group
+				| Email:
+				input.form-control( type="text", placeholder="Email", ng-model="email" ) 
+			.form-group
+				| Address 1:
+				input.form-control( type="text", placeholder="Address 1", ng-model="address1" )
+			.form-group
+				| Address 2:
+				input.form-control( type="text", placeholder="Address 2", ng-model="address2" ) 
+			.form-group
+				| City:
+				input.form-control( type="text", placeholder="city", ng-model="city" ) 
+			.form-group.col-lg-12.col-md-12.col-sm-12.col-xs-12
+				| State:
+				button.btn.btn-default.btn-sm.drop.dropdown-toggle( type="button", data-toggle="dropdown") IL
+				span.caret
+				ul.dropdown-menu.drop.btn-block( role="menu" )
+					li:  a( href="#" ) IL
+					li:  a( href="#" ) MI
+					li:  a( href="#" ) IN
+					li:  a( href="#" ) CA
+					li:  a( href="#" ) NY
+					li:  a( href="#" ) OH
+			.form-group
+				| Postal Code:
+				input.form-control( type="text", placeholder="Postal Code", ng-model="postal" ) 
+			.form-group
+				| User Name:
+				input.form-control( type="text", placeholder="User Name", ng-model="uname" ) 
+			.form-group
+				| Password:
+				input.form-control( type="password", placeholder="Password", ng-model="password" ) 
+			.text-center
+				button.btn.btn-info.btn-md.pull-center( type="submit") Submit
+				button.btn.btn-info.btn-md.pull-center.reset( type="reset") Reset
 
-		div(ng-view)
+			div(ng-view).jumbotron Thanks {{ fname + ' ' + lname }} for create your account.

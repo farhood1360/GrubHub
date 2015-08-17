@@ -24,7 +24,9 @@ This README would normally document whatever steps are necessary to get your app
 }
 * Database configuration: Run $mongod
 * How to run tests:Run $node app.js
-* Deployment instructions: Run $node ./bin/www
+* Deployment instructions: 
+	Run $node ./bin/www 
+	Go to http://localhost:8081/
 
 ### Contribution guidelines ###
 
@@ -35,8 +37,4 @@ This README would normally document whatever steps are necessary to get your app
 ### Who do I talk to? ###
 
 * Repo owner or admin: Farhood Rashidi
-<<<<<<< HEAD
 * Other community or team contact: Bill Korbecki, Jimmy Zollo
-=======
-* Other community or team contact: Bill, Jimmy Zollo
->>>>>>> c401731f9e68fdb5bc8341557cc25221210827ad

@@ -18,8 +18,11 @@ nav.navbar.navbar-default( role="navigation" )
                 a.dropdown-toggle( href="/about", data-toggle="dropdown", role="button", aria-haspopup="true" ) ABOUT 
                     span.caret
                 ul.dropdown-menu
-                    li: a( href="/about" ) COMPANY
-                    li: a( href="/about" ) TEAM
+                    li: a( href="/about/company" ) COMPANY
+                    li: a( href="/about/team" ) TEAM
+                    li.divider
+                    li.dropdown-header About
+                    li: a( href="/about" ) About Us
             li: a( href="/login" ) LOGIN
             li.dropdown
                 a.dropdown-toggle( href="/sign-up", data-toggle="dropdown", role="button", aria-expanded="false" ) SIGN UP 
