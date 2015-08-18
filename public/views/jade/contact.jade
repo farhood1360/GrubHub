@@ -6,24 +6,23 @@ block content
 		br
 		br
 		h2.text-center.text-uppercase.jumbotron  FEEL FREE TO CONTACT US
-		div(ng-app='')
-			.form-group
-				| First Name:
-				input.form-control( type="text", placeholder="First Name", ng-model="fname" ) 
-			.form-group
-				| Last Name:
-				input.form-control( type="text", placeholder="Last Name", ng-model="lname" ) 
-			.form-group
-				| Phone:
-				input.form-control( type="text", placeholder="Phone", ng-model="phone" ) 
-			.form-group
-				| Email:
-				input.form-control( type="text", placeholder="Email", ng-model="email" ) 
-			.form-group
-				| Coment:
-				input.form-control( type="text", placeholder="Comment", ng-model="comment" )
-			.text-center
-				button.btn.btn-info.btn-md.pull-center( type="submit") Submit
-				button.btn.btn-info.btn-md.pull-center.reset( type="reset") Reset
+		.form-group
+			| First Name:
+			input.form-control( type="text", placeholder="First Name", ng-model="fname" ) 
+		.form-group
+			| Last Name:
+			input.form-control( type="text", placeholder="Last Name", ng-model="lname" ) 
+		.form-group
+			| Phone:
+			input.form-control( type="text", placeholder="Phone", ng-model="phone" ) 
+		.form-group
+			| Email:
+			input.form-control( type="text", placeholder="Email", ng-model="email" ) 
+		.form-group
+			| Coment:
+			input.form-control( type="text", placeholder="Comment", ng-model="comment" )
+		.text-center
+			button.btn.btn-info.btn-md.pull-center( type="submit") Submit
+			button.btn.btn-info.btn-md.pull-center.reset( type="reset") Reset
 
-		div(ng-view).jumbotron Thanks {{ fname + ' ' + lname }} for create your account.
+	div(ng-view).jumbotron Thanks {{ fname + ' ' + lname }} for create your account.

@@ -7,6 +7,12 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+
+/* GET project listing. */
+router.get('/projects', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
 /* GET users/craeet */
 router.get('/create', function(req, res, next) {
 	res.render('jade/users/create', { 

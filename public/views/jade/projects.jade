@@ -6,7 +6,11 @@ block content
 		br
 		br
 		h2.text-center.jumbotron  #{title} List
-			p 
-		
-
-		div(ng-view)
+		table.table.table-bordered.table-striped(ng-controller="ProjectListController")
+			thead: tr
+				th Name
+				th Description
+			tboday
+				tr.success(ng-repeat="project in projects")
+					td {{ project.name }}
+					td {{ project.description }}

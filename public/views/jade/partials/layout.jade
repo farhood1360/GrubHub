@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
 	head
 		include header
-	body
+	body(ng-app='myApp')
 		header
 			h1.text-center.text-uppercase collaborata
 			include nav
@@ -14,3 +14,6 @@ html(lang="en")
 					block content
 		footer
 			include footer
+		.scroll-top-wrapper
+			.spna.scroll-top-inner
+				.glyphicon.glyphicon-chevron-up

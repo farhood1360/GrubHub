@@ -6,30 +6,38 @@ block content
 		br
 		br
 		h2.text-center.text-uppercase.jumbotron  Create New Account
-		div(ng-app='')
+		form(ng-controller="ValidateController", name="myForm", novalidate)
 			.form-group
-				| First Name:
-				input.form-control( type="text", placeholder="First Name", ng-model="fname" ) 
+				label First Name
+				input.form-control( type="text", name="fname", placeholder="First Name", ng-model="fname", required ) 
+				span( ng-show="myForm.fname.$dirty && myForm.fname.$invalid" )
+				span( ng-show="myForm.fname.$error.required" ) First Name is required.
 			.form-group
-				| Last Name:
-				input.form-control( type="text", placeholder="Last Name", ng-model="lname" ) 
+				label Last Name
+				input.form-control( type="text", name="lname", placeholder="Last Name", ng-model="lname", required ) 
+				span( ng-show="myForm.lname.$dirty && myForm.lname.$invalid" )
+				span( ng-show="myForm.lname.$error.required" ) Last Name is required.
 			.form-group
-				| Phone:
-				input.form-control( type="text", placeholder="Phone", ng-model="phone" ) 
+				label Phone
+				input.form-control( type="text", name="phone", placeholder="Phone", ng-model="phone", required ) 
+				span( ng-show="myForm.phone.$dirty && myForm.phone.$invalid" )
+				span( ng-show="myForm.phone.$error.required" ) Phone is required.
 			.form-group
-				| Email:
-				input.form-control( type="text", placeholder="Email", ng-model="email" ) 
+				label Email
+				input.form-control( type="text", name="email", placeholder="Email", ng-model="email", required )
+				span( ng-show="myForm.email.$dirty && myForm.email.$invalid" )
+				span( ng-show="myForm.email.$error.required" ) Email is required.  
 			.form-group
-				| Address 1:
-				input.form-control( type="text", placeholder="Address 1", ng-model="address1" )
+				label Address 1
+				input.form-control( type="text", name="address1", placeholder="Address 1", ng-model="address1" )
 			.form-group
-				| Address 2:
-				input.form-control( type="text", placeholder="Address 2", ng-model="address2" ) 
+				label Address 2
+				input.form-control( type="text", name="address2", placeholder="Address 2", ng-model="address2" ) 
 			.form-group
-				| City:
-				input.form-control( type="text", placeholder="city", ng-model="city" ) 
+				label City
+				input.form-control( type="text", name="city", placeholder="city", ng-model="city" ) 
 			.form-group.col-lg-12.col-md-12.col-sm-12.col-xs-12
-				| State:
+				| State
 				button.btn.btn-default.btn-sm.drop.dropdown-toggle( type="button", data-toggle="dropdown") IL
 				span.caret
 				ul.dropdown-menu.drop.btn-block( role="menu" )
@@ -40,16 +48,21 @@ block content
 					li:  a( href="#" ) NY
 					li:  a( href="#" ) OH
 			.form-group
-				| Postal Code:
-				input.form-control( type="text", placeholder="Postal Code", ng-model="postal" ) 
+				label Postal Code
+				input.form-control( type="text", name="postal", placeholder="Postal Code", ng-model="postal" ) 
 			.form-group
-				| User Name:
-				input.form-control( type="text", placeholder="User Name", ng-model="uname" ) 
+				label User Name
+				input.form-control( type="text", name="uname", placeholder="User Name", ng-model="uname" ) 
+				span( ng-show="myForm.uname.$dirty && myForm.uname.$invalid" )
+				span( ng-show="myForm.uname.$error.required" ) Usre Name is required.
 			.form-group
-				| Password:
-				input.form-control( type="password", placeholder="Password", ng-model="password" ) 
+				label Password
+				input.form-control( type="password", name="password", placeholder="Password", ng-model="password" ) 
+				span( ng-show="myForm.password.$dirty && myForm.password.$invalid" )
+				span( ng-show="myForm.password.$error.required" ) Password is required.
 			.text-center
-				button.btn.btn-info.btn-md.pull-center( type="submit") Submit
-				button.btn.btn-info.btn-md.pull-center.reset( type="reset") Reset
+				button.btn.btn-info.btn-md.pull-center( 
+					type="submit", ng-click="save()", ng-disabled="myForm.fname.$dirty && myForm.fname.$invalid || myForm.email.$dirty && myForm.email.$invalid") Submit
+				button.btn.btn-info.btn-md.pull-center.reset( type="reset", ng-click="clear()") Reset
 
-			div(ng-view).jumbotron Thanks {{ fname + ' ' + lname }} for create your account.
+		div(ng-view).jumbotron Thanks {{ fname + ' ' + lname }} for create your account.
