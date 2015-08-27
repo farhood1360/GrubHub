@@ -1,10 +1,8 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* Name: Collaborata App
+* Name: GrubHub App
 * Version:1.0.0
 
 ### How do I get set up? ###
@@ -23,18 +21,7 @@ This README would normally document whatever steps are necessary to get your app
     "serve-favicon": "~2.3.0"
 }
 * Database configuration: Run $mongod
-* How to run tests:Run $node app.js
+* How to run tests:Run $grunt
 * Deployment instructions: 
 	Run $node ./bin/www 
 	Go to http://localhost:8081/
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin: Farhood Rashidi
-* Other community or team contact: Bill Korbecki, Jimmy Zollo

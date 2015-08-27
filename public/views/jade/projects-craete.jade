@@ -1,0 +1,28 @@
+extends partials/layout
+
+block content
+	.main-content(ng-controller="todoController")
+		h1 #{title}
+		br
+		br
+		h2.text-center.jumbotron  #{title} Form
+		form(ng-submit="todoAdd()")
+			.form-group
+				label Enter your project name
+				input.form-control( type="text", placeholder="Project Name", ng-model="todoInput1" )
+				br
+			.form-group
+				label Enter your project description
+				input.form-control( type="text", placeholder="Project Description", ng-model="todoInput2" )
+				br
+				input.form-control.btn-info( type="submit", value="Add Project", ng-click="show=true")
+				hr
+		div(ng-repeat="x in todoList")
+			input.form-control.checkbox( type="checkbox", ng-model="x.done", ng-show="show")
+			span.todotext(ng-bind="x.todoText", ng-show="show")
+			br
+			hr
+		input.form-control.btn-info( type="submit", value="Remove Project", ng-click="remove()" )
+		br
+		.text-center
+			button.bt.btn-next.btn-success(data-toggle="modal", data-target="#myModal", onclick="location.href='/projects';") Project List >>

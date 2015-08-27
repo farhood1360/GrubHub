@@ -2,10 +2,10 @@ extends partials/layout
 
 block content
 	.main-content
-		h1.glyphicon.glyphicon-road #{title}
+		h1 #{title}
 		br
 		br
-		h2.text-center.jumbotron  #{title} List
+		h2.text-center.jumbotron  Project List
 		table.table.table-bordered.table-striped(ng-controller="ProjectListController")
 			thead: tr
 				th Name
@@ -14,3 +14,6 @@ block content
 				tr.success(ng-repeat="project in projects")
 					td {{ project.name }}
 					td {{ project.description }}
+		br
+		.text-center
+			button.bt.btn-next.btn-success(data-toggle="modal", data-target="#myModal", onclick="location.href='/projects/create';") Create New Project >>

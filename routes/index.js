@@ -23,6 +23,17 @@ router.get('/about/team', function(req, res, next) {
   res.render('jade/about-team', { title: 'About Team' });
 });
 
+/* GET log-in page. */
+router.get('/login', function(req, res, next) {
+  res.render('jade/login', { title: 'Log In' });
+});
+
+/* POST log-in page. */
+router.post('/login', function(req, res, next) {
+  	console.log('processing');
+    res.redirect('/');
+});
+
 /* GET sign-up page. */
 router.get('/sign-up', function(req, res, next) {
   res.render('jade/signup', { title: 'Sign-Up' });
@@ -33,14 +44,31 @@ router.get('/sign-up/consumer', function(req, res, next) {
   res.render('jade/signup-consumer', { title: 'Sign Up As Consumer' });
 });
 
+/* POST sign-up/consumer page. */
+router.post('/sign-up/consumer', function(req, res, next) {
+  	console.log('processing');
+    res.redirect('/login');
+});
+
 /* GET sign-up/vendor page. */
 router.get('/sign-up/vendor', function(req, res, next) {
   res.render('jade/signup-vendor', { title: 'Sign Up As Vendor' });
 });
 
-/* GET project page. */
+/* POST sign-up/vendor page. */
+router.post('/sign-up/vendor', function(req, res, next) {
+  	console.log('processing');
+    res.redirect('/login');
+});
+
+/* GET project preview page. */
 router.get('/projects', function(req, res) {
-    res.render('jade/projects', { title: 'Projects' });
+    res.render('jade/projects', { title: 'Preview Create Project' });
+});
+
+/* GET created project page. */
+router.get('/projects/create', function(req, res) {
+    res.render('jade/projects-craete', { title: 'Create New Project' });
 });
 
 /* GET contact page. */

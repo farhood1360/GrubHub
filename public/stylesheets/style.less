@@ -19,6 +19,21 @@
 	border-radius: @radius;
 }
 
+.fade.ng-leave {
+  animation: my_fade_animation 0.5s linear;
+  -webkit-animation: my_fade_animation 0.5s linear;
+}
+
+@keyframes my_fade_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes my_fade_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
 /* Implementation */
 
 .sidebar{
@@ -42,6 +57,10 @@ footer{
   text-align: center;
 }
 
+.text-center{
+  margin-top: 10px;
+}
+
 .reset {
   margin-left: 5px;
 }
@@ -56,10 +75,23 @@ footer{
   padding-left: 0px;
 }
 
+.checkbox {
+  float: right;
+  width: 340px;
+}
+
+.todotext {
+  float: left;
+}
+
+.name {
+  font-weight: bold;
+}
+
 #top-link-block.affix-top {
-    position: absolute;
-    bottom: -82px;
-    left: 10px;
+  position: absolute;
+  bottom: -82px;
+  left: 10px;
 }
 
 .scroll-top-wrapper {
@@ -100,4 +132,9 @@ footer{
 
 .scroll-top-wrapper i.fa {
   line-height: inherit;
+}
+
+.fade.ng-hide {
+  transition:0.5s linear all;
+  opacity:0;
 }

@@ -7,14 +7,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var mongoose = require('mongoose');
-// var dbURI = 'mongodb://localhost:27017'; 
+var mongoose = require('mongoose');
+var dbUrl = 'mongodb://localhost:27017/collaborata'; 
 
 // ROUTES
 // ==============================================
 var routes = require('./routes/index');
 var users = require('./routes/users');
-// var orders = require('./routes/orders');
 // var config = require('./config');
 
 // START THE SERVER
@@ -25,28 +24,27 @@ app.listen(port, function() {
     console.log(new Date().toISOString() + ": server started on port " + port);
 });
 
-// http.createServer(function (req, res) {  
-//   pages.index(req, res);
-// }).listen(8081, '27017');
+// Create the database connection 
+mongoose.connect(dbUrl);
 
-// // Create the database connection 
-// mongoose.connect(dbURI);
+// CONNECTION EVENTS
+// When successfully connected
+mongoose.connection.on('connected', function () {  
+  console.log('Mongoose default connection open to ' + dbUrl);
+}); 
 
-// // CONNECTION EVENTS
-// // When successfully connected
-// mongoose.connection.on('connected', function () {  
-//   console.log('Mongoose default connection open to ' + dbURI);
-// }); 
+// If the connection throws an error
+mongoose.connection.on('error',function (err) {  
+  console.log('Mongoose default connection error: ' + err);
+}); 
 
-// // If the connection throws an error
-// mongoose.connection.on('error',function (err) {  
-//   console.log('Mongoose default connection error: ' + err);
-// }); 
+// When the connection is disconnected
+mongoose.connection.on('disconnected', function () {  
+  console.log('Mongoose default connection disconnected'); 
+});
 
-// // When the connection is disconnected
-// mongoose.connection.on('disconnected', function () {  
-//   console.log('Mongoose default connection disconnected'); 
-// });
+var db = mongoose.connection;
+
 
 // view engine setup
 app.set('views', path.join(__dirname, '/public/views'));
@@ -65,26 +63,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // apply the routes to application
 app.use('/', routes);
 app.use('/users', users);
-// app.get('/', routes.index);
-// app.get('/:name', routes.view);
-// app.get('/partials/:name', routes.partials);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes);
-
-app.route('/login')
-
-    // show the form (GET http://localhost:8081/login)
-    .get(function(req, res) {
-        res.send('this is the login form');
-    })
-
-    // process the form (POST http://localhost:8081/login)
-    .post(function(req, res) {
-        console.log('processing');
-        res.send('processing the login form!');
-    });
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

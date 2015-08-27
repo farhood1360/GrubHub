@@ -6,7 +6,7 @@ block content
 		br
 		br
 		h2.text-center.text-uppercase.jumbotron  Create New Account
-		form(ng-controller="ValidateController", name="myForm")
+		form(ng-controller="ValidateController", name="myForm", method="POST")
 			.form-group
 				label First Name
 				input.form-control( type="text", placeholder="First Name", ng-model="fname" )
@@ -51,5 +51,5 @@ block content
 			.text-center
 				button.btn.btn-info.btn-md.pull-center( type="submit") Submit
 				button.btn.btn-info.btn-md.pull-center.reset( type="reset") Reset
-
+		
 		div(ng-view).jumbotron Thanks {{ fname + ' ' + lname }} for create your account.
