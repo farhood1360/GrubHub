@@ -10,6 +10,13 @@ module.exports = function(grunt){
 
     grunt.initConfig({  
 
+        // concat: {
+        //     dist: {
+        //         src: ['/public/javascrips/*.js'],
+        //         dest: '/public/views/main.js',
+        //     }
+        // },
+
         concurrent: {
             tasks: ['shell', 'nodemon'],
             options: {
@@ -44,9 +51,11 @@ module.exports = function(grunt){
     });
 
     grunt.loadNpmTasks('grunt-concurrent');
+    // grunt.loadNpmTasks('grunt-concat');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.template.today('yyyy-mm-dd');
     grunt.template.addDelimiters('myDelimiters', '{%', '%}');

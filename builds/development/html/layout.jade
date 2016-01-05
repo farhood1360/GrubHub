@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+	head
+		include header
+	body(ng-app='myApp')
+		header
+			h1.text-center.text-uppercase grubhub
+			include nav
+		.container
+			.row
+				.sidebar.col-lg-4.col-md-4.col-sm-4
+					include menu
+				.main-content.col-lg-8.col-md-8.col-sm-8.col-xs-12
+					block content
+		footer
+			include footer
+		.scroll-top-wrapper
+			.spna.scroll-top-inner
+				.glyphicon.glyphicon-chevron-up

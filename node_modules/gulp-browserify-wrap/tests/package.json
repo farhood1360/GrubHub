@@ -1,0 +1,10 @@
+{
+  "name": "gulp-browserify-wrap-tests",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Gulp plugin that allows the use of browserify transforms in a gulp pipeline",
+  "main": "run.js",
+  "author": "Adriaan Callaerts <adriaan.callaerts@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/call-a3/gulp-browserify-wrap"
+}
