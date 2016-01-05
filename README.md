@@ -21,7 +21,8 @@
     "serve-favicon": "~2.3.0"
 }
 * Database configuration: Run $mongod
-* How to run tests:Run $grunt
+* How to run the tests: Run $grunt
+* * How to run the tasks: Run $gulp [task name]
 * Deployment instructions: 
 	Run $node ./bin/www 
 	Go to http://localhost:8081/
